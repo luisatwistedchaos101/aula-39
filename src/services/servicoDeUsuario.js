@@ -6,7 +6,7 @@ const { HttpError } = require("../errors/HttpError");
 
 class ServicoDeUsuario {
   buscarTodos() {
-    return RepositorioDeUsuario.buscarTodos();
+    return await = RepositorioDeUsuario.buscarTodos();
   }
 
   pegarPeloID(id) {

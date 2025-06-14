@@ -1,29 +1,53 @@
 const { Usuario } = require("../models/Usuario");
+const { db } = require ("../../prisma/main")
 
 class RepositorioDeUsuario {
   buscarTodos() {
-    return Usuario.buscarTodos();
+    return await = db.user.findMany();
   }
 
-  criar(usuario) {
-    return usuario.salvar();
+  criar(create) {
+    return db.user.create({
+      where: {
+        id: usuarioId
+      },
+      data: {create}
+    });
   }
 
   buscarPeloEmail(email) {
-    return Usuario.buscarPeloEmail(email);
+    return db.user.email({
+ where: {
+        id: usuarioId
+      },
+      data: {email}
+    });
   }
 
   buscarPeloId(id) {
-    return Usuario.buscarPeloId(id);
+    return db.user.id({
+ where: {
+        id: usuarioId
+      },
+      data: {id}
+    });
   }
 
   atualizar(usuarioId, dadosAtualizados) {
-    return Usuario.atualizar(usuarioId, dadosAtualizados);
+    return db.user.update({
+      where: {
+        id: usuarioId
+      },
+      data: {dadosAtualizados}
+    });
   }
 
-  deletarUmUsuario(id) {
-    return Usuario.deletarUmUsuario(id);
+  deletarUmUsuario() {
+    return db.user.delete({
+     
+    });
   }
 }
 
 module.exports = new RepositorioDeUsuario();
+//não entendi 
